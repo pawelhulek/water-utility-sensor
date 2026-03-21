@@ -1,0 +1,18 @@
+{
+  "domain": "water_utility",
+  "name": "Water Utility Sensor",
+  "documentation": "https://github.com/pawelhulek/water-utility-sensor",
+  "issue_tracker": "https://github.com/pawelhulek/water-utility-sensor/issues",
+  "dependencies": [],
+  "config_flow": true,
+  "codeowners": [
+    "@pawelhulek"
+  ],
+  "requirements": [
+    "playwright>=1.40.0",
+    "pymupdf>=1.23.0"
+  ],
+  "iot_class": "cloud_polling",
+  "version": "1.0.0",
+  "quality_scale": "silver"
+}

@@ -1,0 +1,61 @@
+{
+  "title": "Water Utility Sensor",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Select Water Provider",
+        "description": "Choose your water utility provider. {error_info}",
+        "data": {
+          "provider": "Provider"
+        }
+      },
+      "credentials": {
+        "title": "Enter Credentials",
+        "description": "Enter your IBO credentials. {error_info}",
+        "data": {
+          "username": "Client Code",
+          "password": "Password"
+        }
+      },
+      "reauth": {
+        "title": "Reauthenticate",
+        "description": "Your credentials are no longer valid. {error_info}",
+        "data": {
+          "username": "Client Code",
+          "password": "Password"
+        }
+      },
+      "reconfigure": {
+        "title": "Update Credentials",
+        "description": "Update your credentials. {error_info}",
+        "data": {
+          "username": "Client Code",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "verify_connection_failed": "Login failed! Please check your credentials.",
+      "unknown_provider": "Unknown provider selected."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "water_meter_reading": {
+        "name": "Water Meter Reading",
+        "state_attributes": {
+          "meter_number": "Meter Number",
+          "previous_reading": "Previous Reading",
+          "consumption": "Consumption",
+          "last_update": "Last Update"
+        }
+      },
+      "account_balance": {
+        "name": "Account Balance",
+        "state_attributes": {
+          "status": "Status"
+        }
+      }
+    }
+  }
+}

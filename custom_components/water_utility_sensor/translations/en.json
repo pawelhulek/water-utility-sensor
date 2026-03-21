@@ -1,0 +1,26 @@
+{
+  "title": "Water Utility Sensor",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Select Water Provider",
+        "description": "Choose your water utility provider. {error_info}",
+        "data": {
+          "provider": "Provider"
+        }
+      },
+      "credentials": {
+        "title": "Enter Credentials",
+        "description": "Enter your IBO credentials. {error_info}",
+        "data": {
+          "username": "Client Code",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "verify_connection_failed": "Login failed! Please check your credentials.",
+      "unknown_provider": "Unknown provider selected."
+    }
+  }
+}
