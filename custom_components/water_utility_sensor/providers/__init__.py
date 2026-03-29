@@ -61,6 +61,7 @@ class ProviderRegistry:
     """Registry for water utility providers."""
 
     _providers: dict[str, type[WaterProvider]] = {}
+    _loaded = False
 
     @classmethod
     def register(cls, provider_class: type[WaterProvider]) -> type[WaterProvider]:
@@ -72,17 +73,18 @@ class ProviderRegistry:
     @classmethod
     def get(cls, provider_id: str) -> Optional[type[WaterProvider]]:
         """Get a provider class by ID."""
+        cls._ensure_loaded()
         return cls._providers.get(provider_id)
 
     @classmethod
     def list_providers(cls) -> list[ProviderInfo]:
         """List all registered providers."""
+        cls._ensure_loaded()
         return [p("", "").info for p in cls._providers.values()]
 
     @classmethod
-    def get_provider_ids(cls) -> list[str]:
-        """Get all registered provider IDs."""
-        return list(cls._providers.keys())
-
-
-from .wodkan import WodkanKrzeszowiceProvider
+    def _ensure_loaded(cls):
+        """Lazy load providers."""
+        if not cls._loaded:
+            from .wodkan import WodkanKrzeszowiceProvider
+            cls._loaded = True

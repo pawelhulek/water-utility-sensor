@@ -1,17 +1,9 @@
 {
-  "title": "Czujnik Wodny",
   "config": {
     "step": {
       "user": {
-        "title": "Wybierz dostawcę wody",
-        "description": "Wybierz dostawcę wody. {error_info}",
-        "data": {
-          "provider": "Dostawca"
-        }
-      },
-      "credentials": {
-        "title": "Wprowadź dane logowania",
-        "description": "Wprowadź dane logowania IBO. {error_info}",
+        "title": "Czujnik WODKAN",
+        "description": "Połącz się ze swoim dostawcą wody",
         "data": {
           "username": "Kod klienta",
           "password": "Hasło"
@@ -19,8 +11,10 @@
       }
     },
     "error": {
-      "verify_connection_failed": "Logowanie nie powiodło się! Sprawdź dane logowania.",
-      "unknown_provider": "Wybrano nieznanego dostawcę."
+      "verify_connection_failed": "Nie można połączyć się z dostawcą wody. Sprawdź dane logowania."
+    },
+    "abort": {
+      "already_configured": "To konto jest już skonfigurowane"
     }
   }
 }
